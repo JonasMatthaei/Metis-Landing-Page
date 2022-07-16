@@ -120,6 +120,27 @@
             max-width: 1100px;
             margin: 2rem auto -6rem;
         }
+        .container{
+            width: 100%;
+            height: 100vh;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .swiper{
+          width: 80%;
+          height: fit-content;
+        }
+        .swiper-slide img{
+          width: 100%;
+        }
+        .swiper .swiper-button-prev, .swiper .swiper-button-next{
+            color: #fff;
+        }
+        .swiper .swiper-pagination-bullet-active{
+          background: #fff;
+        }
 
     </style>
 
@@ -129,6 +150,8 @@
 
 
     <title>JabTV Landing Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -186,18 +209,32 @@
         <a class="btn red" href="#">Learn More</a>
         <a class="btn blue" href="#">Subscribe</a>
       </div>
-      <div class="i-frame">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/sUmM_PFpsvQ"
-          title="YouTube video player"
-          frameborder="10"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        ></iframe>
-        <div class="stand-1"></div>
-        <div class="stand-2"></div>
+
+
+
+
+      <div class="container">
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="pictures/picture_1.jpeg"></div>
+            <div class="swiper-slide"><img src="pictures/picture_2.jpeg"></div>
+            <div class="swiper-slide"><img src="pictures/picture_3.jpeg"></div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+
+        </div>
       </div>
+
+
+
     </section>
 
 
@@ -224,6 +261,30 @@
     <script src="assets/js/simple-lightbox.min.js"></script>
     <script>
         // Simple lightbox initializer
+    </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+      const swiper = new Swiper('.swiper', {
+
+        autoplay: {
+          delay: 3000,
+          disableONInteraction: false,
+        },
+      loop: true,
+
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
     </script>
 </body>
 
