@@ -20,7 +20,7 @@
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
         /* CSS Variables */
-
+        
          :root {
             --normal-font: 400;
             --bold-font: 600;
@@ -29,51 +29,52 @@
             --secondary-color: #2b375d;
             --background-color: #fefeff;
             --line-height: 1.7rem;
-            --transition: 0.4s ease-in;
+            --transition: 0.0s ease-in;
+            --font-family: "Roboto", sans-serf;
         }
         /* Smooth scroll effect */
-
+        
         html {
             scroll-behavior: smooth;
         }
         /* Resets */
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             transition: var(--transition);
         }
-
+        
         body {
             font-family: "Roboto", sans-serf;
         }
-
+        
         ul li {
             list-style-type: none;
         }
-
+        
         a {
             text-decoration: none;
             color: var(--primary-color);
         }
-
+        
         a:hover {
             color: var(--secondary-color);
         }
-
+        
         .fist {
             color: var(--secondary-color);
         }
-
+        
         .jab {
             color: var(--primary-color);
         }
-
+        
         .tv {
             color: var(--secondary-color);
         }
-
+        
         nav {
             background: var(--background-color);
             display: flex;
@@ -86,11 +87,11 @@
             left: 0;
             z-index: 1;
         }
-
+        
         .hamburger {
             display: none;
         }
-
+        
         .logo-image {
             width: 46px;
             height: 46px;
@@ -98,23 +99,25 @@
             overflow: hidden;
             margin-top: -6px;
         }
-
+        
         ul {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .nav-item {
             margin-left: 2rem;
         }
-
+        
         .nav-link {
             font-weight: var(--bold-font);
         }
-        .hero .hear{
-          font-size: 50px;
+        
+        .hero .hear {
+            font-size: 50px;
         }
+        
         .hero {
             display: flex;
             align-items: center;
@@ -123,7 +126,13 @@
             max-width: 1100px;
             margin: 1rem auto -6rem;
         }
-        .container{
+        
+        .paragraph {
+            font-size: 22px;
+            font-family: var(--font-family);
+        }
+        
+        .container {
             width: 50%;
             height: 100vh;
             background: #fff;
@@ -131,20 +140,71 @@
             align-items: center;
             justify-content: center;
         }
-        .swiper{
-          width: 80%;
-          height: fit-content;
+        
+        .swiper {
+            width: 80%;
+            height: fit-content;
         }
-        .swiper-slide img{
-          width: 100%;
+        
+        .swiper-slide img {
+            width: 100%;
         }
-        .swiper .swiper-button-prev, .swiper .swiper-button-next{
+        
+        .swiper .swiper-button-prev,
+        .swiper .swiper-button-next {
             color: #fff;
         }
-        .swiper .swiper-pagination-bullet-active{
-          background: #fff;
+        
+        .swiper .swiper-pagination-bullet-active {
+            background: #fff;
         }
-
+        
+        .btn-5 {
+            width: 130px;
+            height: 40px;
+            line-height: 42px;
+            padding: 0;
+            border: none;
+            border-radius: 5px;
+            background: val(--primary-color);
+            background: linear-gradient(0deg, rgba(255, 27, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            padding: 8px;
+        }
+        
+        .btn-5:hover {
+            color: var(--primary-color);
+            background: transparent;
+            box-shadow: none;
+        }
+        
+        .btn-5:before,
+        .btn-5:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 2px;
+            width: 0;
+            background: var(--primary-color);
+            box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003, 4px 4px 5px 0px #0002;
+            transition: 0ms ease all;
+        }
+        
+        .btn-5:after {
+            right: inherit;
+            top: inherit;
+            left: 0;
+            bottom: 0;
+        }
+        
+        .btn-5:hover:before,
+        .btn-5:hover:after {
+            width: 100%;
+            transition: 800ms ease all;
+        }
     </style>
 
 
@@ -152,7 +212,7 @@
 
 
 
-    <title>JabTV Landing Page</title>
+    <title>Metis</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
 </head>
@@ -184,8 +244,12 @@
             <li class="nav-item">
                 <a href="#sub" class="nav-link" id="nav-link">FAQs</a>
             </li>
-        </ul>
+            <li class="nav-item">
+                <a href="#" class="custom-btn btn-5"><span>Anmelden</span></a>
+            </li>
 
+
+        </ul>
 
     </nav>
 
@@ -201,38 +265,37 @@
 
 
     <section class="hero">
-      <div class="intro-text">
-        <h1>
-          <span class="hear"> Größerer Lernerfolg durch Transparenz </span> <br />
-          <span class="connecting"> </span>
-        </h1>
-        <p>
-          TBS ist die digitale Schnittsstelle zwischen Schüler und Lehrer. <br />
-          Es bietet 100% Transparenz innerhalb der mündlichen Mitarbeit und Benotung. </p>
-      </div>
-
-
-
-
-      <div class="container">
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide"><img src="pictures/picture_1.jpeg"></div>
-            <div class="swiper-slide"><img src="pictures/picture_2.jpeg"></div>
-            <div class="swiper-slide"><img src="pictures/picture_3.jpeg"></div>
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-
-
+        <div class="intro-text">
+            <h1>
+                <span class="hear"> Größerer Lernerfolg durch Transparenz </span> <br />
+                <span class="connecting"> </span>
+            </h1>
+            <p class="paragraph">
+                TBS ist die digitale Schnittsstelle zwischen Schüler und Lehrer. <br /> Es bietet 100% Transparenz innerhalb der mündlichen Mitarbeit und Benotung. </p>
         </div>
-      </div>
+
+
+
+
+        <div class="container">
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="pictures/picture_1.jpeg"></div>
+                    <div class="swiper-slide"><img src="pictures/picture_2.jpeg"></div>
+                    <div class="swiper-slide"><img src="pictures/picture_3.jpeg"></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+
+            </div>
+        </div>
 
 
 
@@ -266,26 +329,26 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
     <script>
-      const swiper = new Swiper('.swiper', {
+        const swiper = new Swiper('.swiper', {
 
-        autoplay: {
-          delay: 3000,
-          disableONInteraction: false,
-        },
-      loop: true,
-
-
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+            autoplay: {
+                delay: 3000,
+                disableONInteraction: false,
+            },
+            loop: true,
 
 
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
     </script>
 </body>
 
